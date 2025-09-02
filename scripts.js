@@ -250,3 +250,22 @@ function scrollToSection(sectionId) {
         });
     }
 }
+
+// Espera a que el DOM esté cargado
+document.addEventListener("DOMContentLoaded", () => {
+    const contactBtn = document.querySelector('a[href="#form"]');
+  
+    if (contactBtn) {
+      contactBtn.addEventListener("click", (event) => {
+        event.preventDefault(); // evita el salto inmediato
+  
+        const formSection = document.querySelector("#form");
+        if (formSection) {
+          formSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+      });
+    }
+  });

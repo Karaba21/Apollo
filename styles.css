@@ -1,4 +1,8 @@
 /* Reset y estilos base */
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -120,11 +124,15 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+    color: white;
+    text-decoration: none;
 }
 
 /* Hero Visuals */
@@ -300,33 +308,39 @@ body {
 
 .companies-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
     align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .company {
     text-align: center;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #1a1a2e;
-    padding: 1.5rem;
-    background: #f8fafc;
+    padding: 2rem;
+    background: white;
     border-radius: 15px;
     transition: all 0.3s ease;
     position: relative;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f1f5f9;
 }
 
 .company:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border-color: #6366f1;
 }
 
-.company .fa-star {
-    color: #fbbf24;
-    margin-left: 0.5rem;
-    font-size: 1rem;
+.company-logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 80px;
+    object-fit: contain;
+
 }
+
+
 
 /* Services Section */
 .services {

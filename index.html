@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <!-- Header -->
@@ -16,9 +17,8 @@
                 <h2>APOLLO SOLUTIONS</h2>
             </div>
             <nav class="nav">
-                <a href="#about">About</a>
+                <a href="#servicios">Servicios</a>
                 <a href="#equipo">Equipo</a>
-                <a href="#contactanos" class="btn-contact">Contactanos</a>
             </nav>
         </div>
     </header>
@@ -29,7 +29,7 @@
             <div class="hero-content">
                 <h1 class="hero-title">Soluciones para tu empresa</h1>
                 <p class="hero-subtitle">Desarrollo de páginas web y sistemas CRM simples y efectivos</p>
-                <button class="btn-primary">Contactanos</button>
+                <a href="#form" class="btn-primary">Contactanos</a>
             </div>
             <div class="hero-visuals">
                 <div class="phone-3d">
@@ -69,20 +69,18 @@
         <div class="container">
             <h2 class="section-title">Empresas que confían en nosotros</h2>
             <div class="companies-grid">
-                <div class="company">AIWARE</div>
                 <div class="company">
-                    fusion
-                    <i class="fas fa-star"></i>
+                    <img src="assets/patico performance.PNG" alt="Patico Performance" class="company-logo">
                 </div>
-                <div class="company">imagestocker</div>
-                <div class="company">otto</div>
-                <div class="company">BOARRD</div>
+                <div class="company">
+                    <img src="assets/suburban welding.PNG" alt="Suburban Welding" class="company-logo">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services">
+    <section class="services" id="servicios">
         <div class="container">
             <div class="services-grid">
                 <div class="service-card">
@@ -112,7 +110,7 @@
     </section>
 
     <!-- HubSpot Form Section -->
-    <section class="hubspot-form">
+    <section class="hubspot-form" id="form">
         <div class="container">
             <h2 class="section-title">Conecta con nosotros</h2>
             <div class="form-container">
@@ -123,7 +121,7 @@
     </section>
 
     <!-- Team Section -->
-    <section class="team">
+    <section class="team" id="equipo">
         <div class="container">
             <div class="team-content">
                 <div class="team-image">
