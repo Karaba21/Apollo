@@ -653,3 +653,12 @@ body {
 .team-content {
     animation: fadeInUp 0.8s ease-out;
 }
+
+iframe[src*="hubspot"] {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    max-height: 600px !important;
+    z-index: 2147483647 !important;
+    display: block !important;
+  }
