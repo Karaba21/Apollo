@@ -646,7 +646,17 @@ body {
     animation: fadeInUp 0.8s ease-out;
 }
 
-#hubspot-messages-iframe-container {
+/* HubSpot chat: fuerza posición fija abajo-derecha, ids pueden ser dinámicos */
+#hubspot-messages-iframe-container,
+body > [id^="hubspot-messages-iframe-container"] {
+    position: fixed !important;
+    inset: auto 20px 20px auto !important;
+    z-index: 2147483647 !important;
+}
+
+/* Asegura que el iframe interno herede posicionamiento correcto */
+#hubspot-messages-iframe-container iframe,
+body > [id^="hubspot-messages-iframe-container"] iframe {
     position: fixed !important;
     inset: auto 20px 20px auto !important;
     z-index: 2147483647 !important;

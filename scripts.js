@@ -218,13 +218,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Preloader effect
     window.addEventListener('load', function() {
         document.body.style.opacity = '1';
-        document.body.style.transform = 'translateY(0)';
+        document.body.style.transform = 'none';
     });
 
     // Aplicar estilos de preloader
     document.body.style.opacity = '0';
-    document.body.style.transform = 'translateY(20px)';
-    document.body.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    document.body.style.transform = 'none';
+    document.body.style.transition = 'opacity 0.8s ease';
 });
 
 // Función para manejar el envío del formulario (cuando se implemente)
