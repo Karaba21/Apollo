@@ -552,14 +552,6 @@ body {
     box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
 }
 
-/* HubSpot Conversations (chat) position override */
-#hubspot-messages-iframe-container {
-    position: fixed !important;
-    right: 20px !important;
-    bottom: 20px !important;
-    z-index: 2147483647 !important; /* on top */
-}
-
 /* Footer */
 .footer {
     background: #0f172a;
@@ -654,11 +646,3 @@ body {
     animation: fadeInUp 0.8s ease-out;
 }
 
-iframe[src*="hubspot"] {
-    position: fixed !important;
-    bottom: 20px !important;
-    right: 20px !important;
-    max-height: 600px !important;
-    z-index: 2147483647 !important;
-    display: block !important;
-  }
