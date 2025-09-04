@@ -32,12 +32,12 @@ document.addEventListener('DOMContentLoaded', function() {
             header.style.boxShadow = 'none';
         }
 
-        // Hide/show header on scroll
-        if (scrollTop > lastScrollTop && scrollTop > 200) {
-            header.style.transform = 'translateY(-100%)';
-        } else {
-            header.style.transform = 'translateY(0)';
-        }
+        // Header siempre visible (comentado el hide/show)
+        // if (scrollTop > lastScrollTop && scrollTop > 200) {
+        //     header.style.transform = 'translateY(-100%)';
+        // } else {
+        //     header.style.transform = 'translateY(0)';
+        // }
         
         lastScrollTop = scrollTop;
     });
