@@ -60,15 +60,6 @@ La página está optimizada para:
 3. Abre `index.html` en tu navegador
 4. ¡Listo!
 
-## 📧 Formulario HubSpot
-
-El formulario está configurado con:
-- **Portal ID**: 50439654
-- **Form ID**: c5f2dd87-d01c-430a-9cd8-e15dc35d91bf
-- **Region**: na1
-
-Para cambiar estos valores, edita las líneas correspondientes en `index.html`.
-
 ## 🎯 Funcionalidades JavaScript
 
 - **Smooth Scrolling**: Navegación suave entre secciones
