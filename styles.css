@@ -41,10 +41,24 @@ body {
     align-items: center;
 }
 
-.logo h2 {
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-image {
+    width:400px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 9px;
+}
+
+.logo h1 {
     font-weight: 700;
-    font-size: 1.5rem;
-    color: #1a1a2e;
+    font-size: 2 rem;
+    color: #222368;
+    margin: 0;
 }
 
 .nav {
@@ -556,7 +570,7 @@ body {
 
 .team-photo {
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
