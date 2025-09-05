@@ -1,6 +1,7 @@
 /* Reset y estilos base */
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 10px; /* Compensa la altura del header fijo globalmente */
 }
 
 * {
@@ -360,6 +361,7 @@ body {
 .services {
     padding: 4rem 0;
     background: #f8fafc;
+    scroll-margin-top: 50px; /* Compensa la altura del header fijo */
 }
 
 .services-grid {
@@ -474,6 +476,7 @@ body {
 .hubspot-form {
     padding: 4rem 0;
     background: white;
+    scroll-margin-top: 50px; /* Compensa la altura del header fijo */
 }
 
 .form-container {
@@ -555,6 +558,7 @@ body {
     padding: 4rem 0;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     color: white;
+    scroll-margin-top: 10px; /* Compensa la altura del header fijo */
 }
 
 .team-content {
