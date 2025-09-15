@@ -269,3 +269,82 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+
+// Modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener todos los botones "Más info"
+    const moreInfoButtons = document.querySelectorAll('.btn-more-info');
+    
+    // Obtener todos los modales
+    const modals = document.querySelectorAll('.modal');
+    
+    // Obtener todos los botones de cerrar
+    const closeButtons = document.querySelectorAll('.modal-close');
+    
+    // Función para abrir modal
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+        }
+    }
+    
+    // Función para cerrar modal
+    function closeModal(modal) {
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto'; // Restaurar scroll del body
+    }
+    
+    // Event listeners para botones "Más info"
+    moreInfoButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const serviceType = this.getAttribute('data-service');
+            const modalId = `modal-${serviceType}`;
+            openModal(modalId);
+        });
+    });
+    
+    // Event listeners para botones de cerrar
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const modal = this.closest('.modal');
+            closeModal(modal);
+        });
+    });
+    
+    // Cerrar modal al hacer click fuera del contenido
+    modals.forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal(this);
+            }
+        });
+    });
+    
+    // Cerrar modal con tecla Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            modals.forEach(modal => {
+                if (modal.classList.contains('show')) {
+                    closeModal(modal);
+                }
+            });
+        }
+    });
+    
+    // Cerrar modal al hacer click en botones del modal que redirigen al formulario
+    const modalButtons = document.querySelectorAll('.btn-modal');
+    modalButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Cerrar todos los modales abiertos
+            modals.forEach(modal => {
+                if (modal.classList.contains('show')) {
+                    closeModal(modal);
+                }
+            });
+        });
+    });
+    
+    
+});

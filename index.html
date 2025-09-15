@@ -20,6 +20,7 @@
             </div>
             <nav class="nav">
                 <a href="#servicios">Servicios</a>
+                <a href="#planes">Planes</a>
                 <a href="#form">Contacto</a>
                 <a href="#equipo">Equipo</a>
             </nav>
@@ -88,20 +89,310 @@
             <h2 class="section-title">Servicios que brindamos</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Creación de páginas web</h3>
-                    <h4>Catapulta tu negocio con una página web</h4>
-                    <div class="service-illustration">
-                        <img src="assets/web-creation.png" alt="Creación de páginas web" class="service-illustration-image">
+                    <div class="service-content">
+                        <div class="service-text">
+                            <h3>Creación de páginas web</h3>
+                            <h4>Catapulta tu negocio con una página web</h4>
+                        </div>
+                        <div class="service-illustration">
+                            <img src="assets/web-creation.png" alt="Creación de páginas web" class="service-illustration-image">
+                        </div>
+                    </div>
+                    <div class="service-footer">
+                        <button class="btn-more-info" data-service="web">Más info</button>
                     </div>
                 </div>
                 <div class="service-card">
-                    <h3>CRM adaptado a tus necesidades</h3>
-                    <h4>Maneja tu negocio de forma sencilla</h4>
-                    <div class="crm-illustration">
-                        <div class="hubspot-logo-container">
-                            <img src="assets/hubspot-logo.png" alt="HubSpot CRM" class="hubspot-logo">
+                    <div class="service-content">
+                        <div class="service-text">
+                            <h3>CRM adaptado a tus necesidades</h3>
+                            <h4>Maneja tu negocio de forma sencilla</h4>
+                        </div>
+                        <div class="crm-illustration">
+                            <div class="hubspot-logo-container">
+                                <img src="assets/hubspot-logo.png" alt="HubSpot CRM" class="hubspot-logo">
+                            </div>
                         </div>
                     </div>
+                    <div class="service-footer">
+                        <button class="btn-more-info" data-service="crm">Más info</button>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-content">
+                        <div class="service-text">
+                            <h3>E-commerce adaptado a tus necesidades</h3>
+                            <h4>Vende en tu web de forma sencilla y segura</h4>
+                        </div>
+                        <div class="crm-illustration">
+                            <div class="hubspot-logo-container">
+                                <img src="assets/Shopify-logo.png" alt="HubSpot CRM" class="hubspot-logo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-footer">
+                        <button class="btn-more-info" data-service="ecommerce">Más info</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modales de Servicios -->
+    <!-- Modal Web Development -->
+    <div id="modal-web" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Creación de Páginas Web</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="assets/web-creation.png" alt="Desarrollo Web" class="modal-img">
+                </div>
+                <div class="modal-text">
+                    <h3>Transformamos tu idea en una presencia digital profesional</h3>
+                    <p>En Apollo Solutions, creamos páginas web que no solo se ven increíbles, sino que también funcionan perfectamente para tu negocio. Nuestro enfoque se centra en:</p>
+                    
+                    <div class="modal-features">
+                        <div class="feature-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div>
+                                <h4>Diseño Responsive</h4>
+                                <p>Tu página se verá perfecta en cualquier dispositivo: móvil, tablet o desktop.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-rocket"></i>
+                            <div>
+                                <h4>Optimización SEO</h4>
+                                <p>Configuramos tu sitio para que Google y otros buscadores te encuentren fácilmente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Seguridad y Velocidad</h4>
+                                <p>Implementamos las mejores prácticas de seguridad y optimización para cargas rápidas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-chart-line"></i>
+                            <div>
+                                <h4>Conversión Optimizada</h4>
+                                <p>Diseñamos cada elemento para maximizar las conversiones y generar más clientes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal CRM -->
+    <div id="modal-crm" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>CRM Adaptado a tus Necesidades</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="assets/hubspot-logo.png" alt="HubSpot CRM" class="modal-img">
+                </div>
+                <div class="modal-text">
+                    <h3>Organiza y potencia tu negocio con HubSpot CRM</h3>
+                    <p>Un CRM bien configurado es el corazón de cualquier negocio exitoso. Te ayudamos a implementar HubSpot CRM de manera que realmente funcione para tu empresa:</p>
+                    
+                    <div class="modal-features">
+                        <div class="feature-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Gestión de Contactos</h4>
+                                <p>Organiza todos tus clientes y prospectos en un solo lugar, con historial completo de interacciones.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-tasks"></i>
+                            <div>
+                                <h4>Automatización de Procesos</h4>
+                                <p>Automatiza tareas repetitivas como seguimientos, recordatorios y notificaciones.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <div>
+                                <h4>Reportes y Analytics</h4>
+                                <p>Obtén insights valiosos sobre tu negocio con reportes automáticos y dashboards personalizados.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h4>Capacitación Incluida</h4>
+                                <p>Te enseñamos a usar el CRM de manera efectiva para que puedas sacarle el máximo provecho.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal E-commerce -->
+    <div id="modal-ecommerce" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>E-commerce Adaptado a tus Necesidades</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="assets/Shopify-logo.png" alt="Shopify E-commerce" class="modal-img">
+                </div>
+                <div class="modal-text">
+                    <h3>Vende online con Shopify, la plataforma más confiable</h3>
+                    <p>Transformamos tu negocio físico en una tienda online exitosa. Con Shopify, tendrás todo lo necesario para vender en internet:</p>
+                    
+                    <div class="modal-features">
+                        <div class="feature-item">
+                            <i class="fas fa-shopping-cart"></i>
+                            <div>
+                                <h4>Tienda Online Completa</h4>
+                                <p>Diseñamos tu tienda con tu marca, productos organizados y proceso de compra optimizado.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-credit-card"></i>
+                            <div>
+                                <h4>Pagos Seguros</h4>
+                                <p>Integramos múltiples métodos de pago para que tus clientes puedan comprar con confianza.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-truck"></i>
+                            <div>
+                                <h4>Gestión de Inventario</h4>
+                                <p>Controla tu stock, gestiona pedidos y automatiza el proceso de envío.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div>
+                                <h4>Optimizado para Móviles</h4>
+                                <p>Tu tienda se ve perfecta en cualquier dispositivo, maximizando las ventas móviles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="planes">
+        <div class="container">
+            <h2 class="section-title">Planes</h2>
+            <div class="pricing-grid">
+                <!-- Freemium Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="plan-name freemium">Landing Plan 🖥️</h3>
+                        <p class="plan-description">Tene tu presencia online en hasta 2 semanas.</p>
+                        <div class="price">
+                            <span class="amount">180usd</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Landing page profesional.</li>
+                            <li><i class="fas fa-check"></i> Configuración de hosting y dominio.</li>
+                            <li><i class="fas fa-check"></i> Diseño responsive y optimizado para conversión.</li>
+                            <li><i class="fas fa-check"></i> Mantenimiento mensual por 20usd (opcional)</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#form" class="btn-pricing multi-btn">Solicitar info</a>
+                    </div>
+                </div>
+
+                <!-- Express -->
+                <div class="pricing-card popular">
+                    <div class="pricing-header">
+                        <h3 class="plan-name growth">Express ⚡</h3>
+                        <p class="plan-description">Tu página lista en solo 3 días.</p>
+                        <div class="price">
+                            <span class="amount">300usd</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Landing page profesional</li>
+                            <li><i class="fas fa-check"></i> Configuración de hosting y dominio.</li>
+                            <li><i class="fas fa-check"></i> Diseño responsive + entrega exprés.</li>
+                            <li><i class="fas fa-check"></i> Mantenimiento mensual por 20usd (opcional)</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#form" class="btn-pricing growth-btn">Solicitar info</a>
+                    </div>
+                </div>
+
+                <!-- Business Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="plan-name multi">Business Plan 🚀</h3>
+                        <p class="plan-description">Tu negocio digital completo en hasta 3 semanas.</p>
+                        <div class="price">
+                            <span class="amount">700usd</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Página web completa profesional.</li>
+                            <li><i class="fas fa-check"></i> Configuración de hosting y dominio.</li>
+                            <li><i class="fas fa-check"></i> Integración y armado de CRM (HubSpot).</li>
+                            <li><i class="fas fa-check"></i> Capacitación breve en uso de CRM</li>
+                            <li><i class="fas fa-check"></i> Integración de e-commerce y armado de la tienda.</li>
+                            <li><i class="fas fa-check"></i> Carga inicial de productos en la tienda</li>
+                            <li><i class="fas fa-check"></i> Mantenimiento mensual por 100usd (opcional)</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#form" class="btn-pricing multi-btn">Solicitar info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="disclaimers-container">
+            <div class="disclaimer-card">
+                <div class="disclaimer-icon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <div class="disclaimer-content">
+                    <h4>Incluido en el precio</h4>
+                    <p>El valor del plan cubre la configuración inicial de hosting y dominio, además del diseño y puesta en línea de tu sitio.
+                         El mantenimiento mensual es opcional, pero necesario si querés soporte y cambios continuos.</p>
+                </div>
+            </div>
+            
+            <div class="disclaimer-card">
+                <div class="disclaimer-icon">
+                    <i class="fas fa-external-link-alt"></i>
+                </div>
+                <div class="disclaimer-content">
+                    <h4>Costos adicionales</h4>
+                    <p>El servicio de hosting y el dominio no están incluidos en el precio del plan. Estos costos se pagan directamente al proveedor que elijas. 
+                        Nosotros nos encargamos de dejar todo configurado y funcionando.</p>
                 </div>
             </div>
         </div>
@@ -130,7 +421,7 @@
             <!-- Cambiá 598XXXXXXXX por tu número (formato internacional sin + ni 0) -->
             <a
               class="btn-whatsapp"
-              href="https://wa.me/598XXXXXXXX?text=Hola%20Apollo,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20web%20y%20CRM"
+              href="https://wa.me/59893350714?text=Hola%20Apollo,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20web%20y%20CRM"
               target="_blank" rel="noopener">
               💬 Contactar por WhatsApp
             </a>
@@ -138,7 +429,8 @@
             <!-- Mini lista de atajos opcional -->
             <ul class="whatsapp-bullets">
               <li>👉 Pedido de web rápida</li>
-              <li>👉 Implementar CRM gratis (HubSpot)</li>
+              <li>👉 Implementar CRM (HubSpot)</li>
+              <li>👉 Implementar e-commerce (Shopify)</li>
               <li>👉 Dudas / presupuesto</li>
             </ul>
           </aside>
@@ -181,7 +473,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Apollo Solutions. Todos los derechos reservados.</p>
+                <p>&copy; Apollo Solutions™ – Soluciones web y CRM para startups. Marca en uso desde 2025.</p>
             </div>
         </div>
     </footer>
