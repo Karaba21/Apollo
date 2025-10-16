@@ -1436,12 +1436,12 @@ body > [id^="hubspot-messages-iframe-container"] iframe {
 
 /* Disclaimer Styles */
 .disclaimers-container {
-    max-width: 1000px;
+    max-width: 1400px;
     margin: 3rem auto 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 1.5rem;
+    display: flex;
+    gap: 2rem;
     padding: 0 20px;
+    justify-content: space-between;
 }
 
 .disclaimer-card {
@@ -1455,6 +1455,8 @@ body > [id^="hubspot-messages-iframe-container"] iframe {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    flex: 1;
+    min-width: 400px;
 }
 
 .disclaimer-card::before {
