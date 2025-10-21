@@ -19,11 +19,44 @@
                
             </div>
             <nav class="nav">
-                <a href="#servicios">Servicios</a>
-                <a href="#planes">Planes</a>
-                <a href="#form">Contacto</a>
-                <a href="#equipo">Equipo</a>
+                <a href="#servicios" data-lang="nav.services">Servicios</a>
+                <a href="#planes" data-lang="nav.pricing">Planes</a>
+                <a href="#form" data-lang="nav.contact">Contacto</a>
+                <a href="#equipo" data-lang="nav.team">Equipo</a>
+                <div class="language-dropdown">
+                    <button id="language-toggle" class="language-btn">
+                        <i class="fas fa-globe"></i>
+                        <span id="current-lang">ES</span>
+                    </button>
+                    <div class="language-options">
+                        <div class="language-option" data-lang="es">
+                            <span class="flag">🇪🇸</span>
+                            <span>Español</span>
+                        </div>
+                        <div class="language-option" data-lang="en">
+                            <span class="flag">🇺🇸</span>
+                            <span>English</span>
+                        </div>
+                    </div>
+                </div>
             </nav>
+            <!-- Dropdown de idioma para móvil -->
+            <div class="language-dropdown-mobile">
+                <button id="language-toggle-mobile" class="language-btn-mobile">
+                    <i class="fas fa-globe"></i>
+                    <span id="current-lang-mobile">ES</span>
+                </button>
+                <div class="language-options-mobile">
+                    <div class="language-option" data-lang="es">
+                        <span class="flag">🇪🇸</span>
+                        <span>Español</span>
+                    </div>
+                    <div class="language-option" data-lang="en">
+                        <span class="flag">🇺🇸</span>
+                        <span>English</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -31,9 +64,9 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Soluciones para tu empresa</h1>
-                <p class="hero-subtitle">Desarrollo de páginas web y sistemas CRM simples y efectivos</p>
-                <a href="#form" class="btn-primary">Contactanos</a>
+                <h1 class="hero-title" data-lang="hero.title">Soluciones para tu empresa</h1>
+                <p class="hero-subtitle" data-lang="hero.subtitle">Desarrollo de páginas web y sistemas CRM simples y efectivos</p>
+                <a href="#form" class="btn-primary" data-lang="hero.contact">Contactanos</a>
             </div>
             <div class="hero-visuals">
                 <div class="phone-3d">
@@ -71,7 +104,7 @@
     <!-- Companies Section -->
     <section class="companies">
         <div class="container">
-            <h2 class="section-title">Empresas que confían en nosotros</h2>
+            <h2 class="section-title" data-lang="companies.title">Empresas que confían en nosotros</h2>
             <div class="companies-grid">
                 <div class="company">
                     <img src="assets/suburban welding.PNG" alt="Suburban Welding" class="company-logo">
@@ -88,27 +121,27 @@
     <!-- Services Section -->
     <section class="services" id="servicios">
         <div class="container">
-            <h2 class="section-title">Servicios que brindamos</h2>
+            <h2 class="section-title" data-lang="services.title">Servicios que brindamos</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-content">
                         <div class="service-text">
-                            <h3>Creación de páginas web</h3>
-                            <h4>Catapulta tu negocio con una página web</h4>
+                            <h3 data-lang="services.web.title">Creación de páginas web</h3>
+                            <h4 data-lang="services.web.subtitle">Catapulta tu negocio con una página web</h4>
                         </div>
                         <div class="service-illustration">
                             <img src="assets/web-creation.png" alt="Creación de páginas web" class="service-illustration-image">
                         </div>
                     </div>
                     <div class="service-footer">
-                        <button class="btn-more-info" data-service="web">Más info</button>
+                        <button class="btn-more-info" data-service="web" data-lang="services.more_info">Más info</button>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-content">
                         <div class="service-text">
-                            <h3>CRM adaptado a tus necesidades</h3>
-                            <h4>Maneja tu negocio de forma sencilla</h4>
+                            <h3 data-lang="services.crm.title">CRM adaptado a tus necesidades</h3>
+                            <h4 data-lang="services.crm.subtitle">Maneja tu negocio de forma sencilla</h4>
                         </div>
                         <div class="crm-illustration">
                             <div class="hubspot-logo-container">
@@ -117,14 +150,14 @@
                         </div>
                     </div>
                     <div class="service-footer">
-                        <button class="btn-more-info" data-service="crm">Más info</button>
+                        <button class="btn-more-info" data-service="crm" data-lang="services.more_info">Más info</button>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-content">
                         <div class="service-text">
-                            <h3>E-commerce adaptado a tus necesidades</h3>
-                            <h4>Vende en tu web de forma sencilla y segura</h4>
+                            <h3 data-lang="services.ecommerce.title">E-commerce adaptado a tus necesidades</h3>
+                            <h4 data-lang="services.ecommerce.subtitle">Vende en tu web de forma sencilla y segura</h4>
                         </div>
                         <div class="crm-illustration">
                             <div class="hubspot-logo-container">
@@ -133,14 +166,14 @@
                         </div>
                     </div>
                     <div class="service-footer">
-                        <button class="btn-more-info" data-service="ecommerce">Más info</button>
+                        <button class="btn-more-info" data-service="ecommerce" data-lang="services.more_info">Más info</button>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-content">
                         <div class="service-text">
-                            <h3>Conexión con base de datos Supabase</h3>
-                            <h4>Gestiona datos de forma simple y segura</h4>
+                            <h3 data-lang="services.database.title">Conexión con base de datos Supabase</h3>
+                            <h4 data-lang="services.database.subtitle">Gestiona datos de forma simple y segura</h4>
                         </div>
                         <div class="crm-illustration">
                             <div class="hubspot-logo-container">
@@ -149,7 +182,7 @@
                         </div>
                     </div>
                     <div class="service-footer">
-                        <button class="btn-more-info" data-service="basededatos">Más info</button>
+                        <button class="btn-more-info" data-service="basededatos" data-lang="services.more_info">Más info</button>
                     </div>
                 </div>
             </div>
@@ -319,74 +352,74 @@
     <!-- Pricing Section -->
     <section class="pricing" id="planes">
         <div class="container">
-            <h2 class="section-title">Planes</h2>
+            <h2 class="section-title" data-lang="pricing.title">Planes</h2>
             <div class="pricing-grid">
                 <!-- Freemium Plan -->
                 <div class="pricing-card">
                     <div class="pricing-header">
-                        <h3 class="plan-name freemium">Landing Plan 🖥️</h3>
-                        <p class="plan-description">Tene tu presencia online en hasta 2 semanas.</p>
+                        <h3 class="plan-name freemium" data-lang="pricing.landing.title">Landing Plan 🖥️</h3>
+                        <p class="plan-description" data-lang="pricing.landing.description">Tene tu presencia online en hasta 2 semanas.</p>
                         <div class="price">
                             <span class="amount">180usd</span>
                         </div>
                     </div>
                     <div class="pricing-features">
                         <ul>
-                            <li><i class="fas fa-check"></i> Landing page profesional.</li>
-                            <li><i class="fas fa-check"></i> Configuración de hosting y dominio.</li>
-                            <li><i class="fas fa-check"></i> Diseño responsive y optimizado para conversión.</li>
-                            <li><i class="fas fa-check"></i> Mantenimiento mensual por 40usd (opcional)</li>
+                            <li><i class="fas fa-check"></i> <span data-lang="pricing.landing.feature1">Landing page profesional.</span></li>
+                            <li><i class="fas fa-check"></i> <span data-lang="pricing.landing.feature2">Configuración de hosting y dominio.</span></li>
+                            <li><i class="fas fa-check"></i> <span data-lang="pricing.landing.feature3">Diseño responsive y optimizado para conversión.</span></li>
+                            <li><i class="fas fa-check"></i> <span data-lang="pricing.landing.feature4">Mantenimiento mensual por 40usd (opcional)</span></li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
-                        <a href="#form" class="btn-pricing multi-btn">Solicitar info</a>
+                        <a href="#form" class="btn-pricing multi-btn" data-lang="pricing.request_info">Solicitar info</a>
                     </div>
                 </div>
 
                 <!-- Express -->
                 <div class="pricing-card popular">
                     <div class="pricing-header">
-                        <h3 class="plan-name growth">Express ⚡</h3>
-                        <p class="plan-description">Tu página lista en solo 3 días.</p>
+                        <h3 class="plan-name growth" data-lang="pricing.express.title">Express ⚡</h3>
+                        <p class="plan-description" data-lang="pricing.express.description">Tu página lista en solo 3 días.</p>
                         <div class="price">
                             <span class="amount">300usd</span>
                         </div>
                     </div>
                     <div class="pricing-features">
                         <ul>
-                            <li><i class="fas fa-check"></i> Landing page profesional</li>
-                            <li><i class="fas fa-check"></i> Configuración de hosting y dominio.</li>
-                            <li><i class="fas fa-check"></i> Diseño responsive + entrega exprés.</li>
-                            <li><i class="fas fa-check"></i> Mantenimiento mensual por 40usd (opcional)</li>
+                            <li><i class="fas fa-check"></i> <span data-lang="pricing.express.feature1">Landing page profesional</span></li>
+                            <li><i class="fas fa-check"></i> <span data-lang="pricing.express.feature2">Configuración de hosting y dominio.</span></li>
+                            <li><i class="fas fa-check"></i> <span data-lang="pricing.express.feature3">Diseño responsive + entrega exprés.</span></li>
+                            <li><i class="fas fa-check"></i> <span data-lang="pricing.express.feature4">Mantenimiento mensual por 40usd (opcional)</span></li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
-                        <a href="#form" class="btn-pricing growth-btn">Solicitar info</a>
+                        <a href="#form" class="btn-pricing growth-btn" data-lang="pricing.request_info">Solicitar info</a>
                     </div>
                 </div>
 
                 <!-- Business Plan -->
                 <div class="pricing-card">
                     <div class="pricing-header">
-                        <h3 class="plan-name multi">Business Plan 🚀</h3>
-                        <p class="plan-description">Tu negocio digital completo en hasta 3 semanas.</p>
+                        <h3 class="plan-name multi" data-lang="pricing.business.title">Business Plan 🚀</h3>
+                        <p class="plan-description" data-lang="pricing.business.description">Tu negocio digital completo en hasta 3 semanas.</p>
                         <div class="price">
                             <span class="amount">700usd</span>
                         </div>
                     </div>
                     <div class="pricing-features">
                         <ul>
-                            <li><i class="fas fa-check"></i> Página web completa profesional.</li>
-                            <li><i class="fas fa-check"></i> Configuración de hosting y dominio.</li>
-                            <li><i class="fas fa-check"></i> Integración y armado de CRM (HubSpot).</li>
-                            <li><i class="fas fa-check"></i> Capacitación breve en uso de CRM</li>
-                            <li><i class="fas fa-check"></i> Integración de e-commerce y armado de la tienda.</li>
-                            <li><i class="fas fa-check"></i> Integración con base de datos Supabase</li>
-                            <li><i class="fas fa-check"></i> Mantenimiento mensual por 80usd (opcional)</li>
+                            <li><i class="fas fa-check"></i> <span data-lang="pricing.business.feature1">Página web completa profesional.</span></li>
+                            <li><i class="fas fa-check"></i> <span data-lang="pricing.business.feature2">Configuración de hosting y dominio.</span></li>
+                            <li><i class="fas fa-check"></i> <span data-lang="pricing.business.feature3">Integración y armado de CRM (HubSpot).</span></li>
+                            <li><i class="fas fa-check"></i> <span data-lang="pricing.business.feature4">Capacitación breve en uso de CRM</span></li>
+                            <li><i class="fas fa-check"></i> <span data-lang="pricing.business.feature5">Integración de e-commerce y armado de la tienda.</span></li>
+                            <li><i class="fas fa-check"></i> <span data-lang="pricing.business.feature6">Integración con base de datos Supabase</span></li>
+                            <li><i class="fas fa-check"></i> <span data-lang="pricing.business.feature7">Mantenimiento mensual por 80usd (opcional)</span></li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
-                        <a href="#form" class="btn-pricing multi-btn">Solicitar info</a>
+                        <a href="#form" class="btn-pricing multi-btn" data-lang="pricing.request_info">Solicitar info</a>
                     </div>
                 </div>
             </div>
@@ -397,8 +430,8 @@
                     <i class="fas fa-info-circle"></i>
                 </div>
                 <div class="disclaimer-content">
-                    <h4>Incluido en el precio</h4>
-                    <p>El valor del plan cubre la configuración inicial de hosting y dominio, además del diseño y puesta en línea de tu sitio.
+                    <h4 data-lang="disclaimers.included.title">Incluido en el precio</h4>
+                    <p data-lang="disclaimers.included.description">El valor del plan cubre la configuración inicial de hosting y dominio, además del diseño y puesta en línea de tu sitio.
                          El mantenimiento mensual es opcional, pero necesario si querés soporte y cambios continuos.</p>
                 </div>
             </div>
@@ -408,8 +441,8 @@
                     <i class="fas fa-external-link-alt"></i>
                 </div>
                 <div class="disclaimer-content">
-                    <h4>Costos adicionales</h4>
-                    <p>El servicio de hosting y el dominio no están incluidos en el precio del plan. Estos costos se pagan directamente al proveedor que elijas. 
+                    <h4 data-lang="disclaimers.additional.title">Costos adicionales</h4>
+                    <p data-lang="disclaimers.additional.description">El servicio de hosting y el dominio no están incluidos en el precio del plan. Estos costos se pagan directamente al proveedor que elijas. 
                         Nosotros nos encargamos de dejar todo configurado y funcionando.</p>
                 </div>
             </div>
@@ -419,8 +452,8 @@
                     <i class="fas fa-shopping-cart"></i>
                 </div>
                 <div class="disclaimer-content">
-                    <h4>Business Plan</h4>
-                    <p>El Business Plan puede incluir todo lo mencionado arriba, en caso de no desear algun servicio el costo sigue siendo el mismo.</p>
+                    <h4 data-lang="disclaimers.business.title">Business Plan</h4>
+                    <p data-lang="disclaimers.business.description">El Business Plan puede incluir todo lo mencionado arriba, en caso de no desear algun servicio el costo sigue siendo el mismo.</p>
                 </div>
             </div>
         </div>
@@ -429,36 +462,36 @@
     <!-- Contact Section -->
     <section class="contact-section" id="form">
         <div class="container">
-            <h2 class="section-title">Conectá con nosotros</h2>
+            <h2 class="section-title" data-lang="contact.title">Conectá con nosotros</h2>
             <div class="contact-content">
                 <div class="contact-form-container">
                     <div class="contact-info">
                         
-                        <p>Completá el formulario y te respondemos por WhatsApp con toda la información que necesitás.</p>
+                        <p data-lang="contact.description">Completá el formulario y te respondemos por WhatsApp con toda la información que necesitás.</p>
                     </div>
                     
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
-                            <label for="nombre">Nombre *</label>
-                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+                            <label for="nombre" data-lang="contact.name_label">Nombre *</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo" data-lang="contact.name_placeholder">
                         </div>
                         
                         <div class="form-group">
-                            <label for="rubro">Rubro de tu emprendimiento o empresa *</label>
-                            <input type="text" id="rubro" name="rubro" required placeholder="Ej: Restaurante, Tienda de ropa, Consultoría, etc.">
+                            <label for="rubro" data-lang="contact.business_label">Rubro de tu emprendimiento o empresa *</label>
+                            <input type="text" id="rubro" name="rubro" required placeholder="Ej: Restaurante, Tienda de ropa, Consultoría, etc." data-lang="contact.business_placeholder">
                         </div>
                         
                         <div class="form-group form-group-wide">
-                            <label for="servicio">Servicio que buscas *</label>
-                            <textarea id="servicio" name="servicio" required placeholder="Ej: Landing Page, CRM HubSpot, E-commerce, etc." rows="3"></textarea>
+                            <label for="servicio" data-lang="contact.service_label">Servicio que buscas *</label>
+                            <textarea id="servicio" name="servicio" required placeholder="Ej: Landing Page, CRM HubSpot, E-commerce, etc." rows="3" data-lang="contact.service_placeholder"></textarea>
                         </div>
                         
                         <div class="form-group">
-                            <label for="tiempo">Tiempo deseado del servicio *</label>
-                            <input type="text" id="tiempo" name="tiempo" required placeholder="Ej: Urgente, 1-2 semanas, sin apuro, etc.">
+                            <label for="tiempo" data-lang="contact.time_label">Tiempo deseado del servicio *</label>
+                            <input type="text" id="tiempo" name="tiempo" required placeholder="Ej: Urgente, 1-2 semanas, sin apuro, etc." data-lang="contact.time_placeholder">
                         </div>
                         
-                        <button type="submit" class="btn-whatsapp" id="whatsappBtn">
+                        <button type="submit" class="btn-whatsapp" id="whatsappBtn" data-lang="contact.whatsapp_button">
                             💬 Conectar por WhatsApp
                         </button>
                     </form>
@@ -475,8 +508,8 @@
                     <img src="assets/foto-mia.jpeg" alt="Equipo de Apollo Solutions trabajando" class="team-photo">
                 </div>
                 <div class="team-text">
-                    <h2>Agustín Karabajich</h2>
-                    <p>Soy estudiante de Ingeniería en Informática con una gran pasión por el desarrollo web y la innovación tecnológica. 
+                    <h2 data-lang="team.name">Agustín Karabajich</h2>
+                    <p data-lang="team.description">Soy estudiante de Ingeniería en Informática con una gran pasión por el desarrollo web y la innovación tecnológica. 
                         Creé Sav Solutions con la idea de ayudar a emprendimientos nuevos y pequeñas empresas a crecer mediante soluciones 
                         digitales simples, accesibles y efectivas. Mi objetivo es acompañar a los negocios en sus primeros 
                         pasos y brindarles herramientas que les permitan transformarse y destacarse en el mundo digital.</p>
