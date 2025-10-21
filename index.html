@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sav Solutions - Soluciones Web y CRM para Startups</title>
+    <title>Sav Solutions - Soluciones web a tu medida</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -427,47 +427,45 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="hubspot-form" id="form">
-        <div class="container contact-grid">
-          <!-- Columna izquierda: Formulario -->
-          <div class="form-col">
+    <section class="contact-section" id="form">
+        <div class="container">
             <h2 class="section-title">Conectá con nosotros</h2>
-            <div class="form-container">
-                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-                <script>
-                  hbspt.forms.create({
-                    portalId: "50439654",
-                    formId: "f718c61f-a3ef-4fdd-a2cc-7bfc7cbec593",
-                    region: "na1"
-                  });
-                </script>
+            <div class="contact-content">
+                <div class="contact-form-container">
+                    <div class="contact-info">
+                        
+                        <p>Completá el formulario y te respondemos por WhatsApp con toda la información que necesitás.</p>
+                    </div>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="nombre">Nombre *</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="rubro">Rubro de tu emprendimiento o empresa *</label>
+                            <input type="text" id="rubro" name="rubro" required placeholder="Ej: Restaurante, Tienda de ropa, Consultoría, etc.">
+                        </div>
+                        
+                        <div class="form-group form-group-wide">
+                            <label for="servicio">Servicio que buscas *</label>
+                            <textarea id="servicio" name="servicio" required placeholder="Ej: Landing Page, CRM HubSpot, E-commerce, etc." rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tiempo">Tiempo deseado del servicio *</label>
+                            <input type="text" id="tiempo" name="tiempo" required placeholder="Ej: Urgente, 1-2 semanas, sin apuro, etc.">
+                        </div>
+                        
+                        <button type="submit" class="btn-whatsapp" id="whatsappBtn">
+                            💬 Conectar por WhatsApp
+                        </button>
+                    </form>
+                </div>
             </div>
-          </div>
-      
-          <!-- Columna derecha: WhatsApp CTA -->
-          <aside class="whatsapp-col">
-            <h3 class="whatsapp-title">¿Te embola llenar formularios? 😅</h3>
-            <p class="whatsapp-sub">Escribinos directo por WhatsApp y te respondemos al toque.</p>
-      
-            <!-- Cambiá 598XXXXXXXX por tu número (formato internacional sin + ni 0) -->
-            <a
-              class="btn-whatsapp"
-              href="https://wa.me/59893350714?text=Hola%20Sav,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20web%20y%20CRM"
-              target="_blank" rel="noopener">
-              💬 Contactar por WhatsApp
-            </a>
-      
-            <!-- Mini lista de atajos opcional -->
-            <ul class="whatsapp-bullets">
-              <li>👉 Pedido de web rápida</li>
-              <li>👉 Implementar CRM (HubSpot)</li>
-              <li>👉 Implementar e-commerce (Shopify)</li>
-              <li>👉 Integrar base de datos Supabase</li>
-              <li>👉 Dudas / presupuesto</li>
-            </ul>
-          </aside>
         </div>
-      </section>
+    </section>
 
     <!-- Team Section -->
     <section class="team" id="equipo">
@@ -511,9 +509,6 @@
     </footer>
 
     <script src="scripts.js"></script>
-    <!-- Start of HubSpot Embed Code -->
-<script type="text/javascript" id="hs-script-loader" async defer src="https://js.hs-scripts.com/50439654.js"></script>
-<!-- End of HubSpot Embed Code -->
  
 </body>
 </html>

@@ -346,5 +346,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Funcionalidad del formulario de contacto
+    const contactForm = document.getElementById('contactForm');
+    const whatsappBtn = document.getElementById('whatsappBtn');
+    
+    if (contactForm && whatsappBtn) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Obtener los valores del formulario
+            const nombre = document.getElementById('nombre').value.trim();
+            const rubro = document.getElementById('rubro').value.trim();
+            const servicio = document.getElementById('servicio').value;
+            const tiempo = document.getElementById('tiempo').value;
+            
+            // Validar que todos los campos estén completos
+            if (!nombre || !rubro || !servicio || !tiempo) {
+                alert('Por favor, completá todos los campos del formulario.');
+                return;
+            }
+            
+            // Crear el mensaje de WhatsApp
+            const mensaje = `Hola Sav Solutions! 👋
+
+Mi nombre es: ${nombre}
+Rubro de mi emprendimiento/empresa: ${rubro}
+Servicio que busco: ${servicio}
+Tiempo deseado: ${tiempo}
+
+Me gustaría recibir más información sobre este servicio. ¡Gracias!`;
+            
+            // Codificar el mensaje para URL
+            const mensajeCodificado = encodeURIComponent(mensaje);
+            
+            // Crear el enlace de WhatsApp
+            const numeroWhatsApp = '59893350714';
+            const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`;
+            
+            // Abrir WhatsApp
+            window.open(urlWhatsApp, '_blank');
+        });
+    }
+    
     
 });
