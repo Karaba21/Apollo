@@ -163,64 +163,148 @@ body {
     font-weight: 500;
 }
 
-/* Language Dropdown Mobile */
-.language-dropdown-mobile {
+/* Mobile Menu */
+.mobile-menu {
     display: none;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+    position: relative;
     z-index: 1001;
 }
 
-.language-btn-mobile {
-    background: white;
-    color: #333;
-    border: 2px solid #e2e8f0;
-    padding: 0.4rem 0.8rem;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-weight: 500;
+.mobile-menu-btn {
+    background: none;
+    border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+    padding: 0.5rem;
     display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    min-width: 70px;
-    justify-content: center;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    gap: 4px;
+    transition: all 0.3s ease;
 }
 
-.language-btn-mobile:hover {
-    border-color: #6366f1;
-    background: #f8fafc;
+.mobile-menu-btn:hover {
+    transform: scale(1.05);
 }
 
-.language-btn-mobile i {
-    color: #6366f1;
-    font-size: 0.8rem;
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
-.language-options-mobile {
-    position: absolute;
-    top: 100%;
-    right: 0;
+.mobile-menu-btn.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.mobile-menu-dropdown {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    left: 20px;
     background: white;
     border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    min-width: 120px;
-    z-index: 1000;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-10px);
+    transform: translateY(-20px);
     transition: all 0.3s ease;
+    max-height: 80vh;
+    overflow-y: auto;
+    display: none;
 }
 
-.language-dropdown-mobile:hover .language-options-mobile,
-.language-dropdown-mobile.active .language-options-mobile {
+.mobile-menu.active .mobile-menu-dropdown {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    display: block !important;
+}
+
+.mobile-menu-content {
+    padding: 1.5rem;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.mobile-nav-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.mobile-nav-link:hover {
+    background: #f8fafc;
+    color: #6366f1;
+    border-color: #e2e8f0;
+    transform: translateX(5px);
+}
+
+.mobile-language-section {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1.5rem;
+}
+
+.mobile-language-label {
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mobile-language-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mobile-language-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.mobile-language-option:hover {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+    transform: translateX(5px);
+}
+
+.mobile-language-option .flag {
+    font-size: 1.2rem;
+}
+
+.mobile-language-option span:last-child {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 500;
 }
 
 .btn-contact {
@@ -438,10 +522,11 @@ body {
     50% { transform: translateX(100vw); opacity: 1; }
 }
 
-/* Companies Section */
-.companies {
+/* Portfolio Section */
+.portfolio {
     padding: 4rem 0;
     background: white;
+    color: #1a1a2e;
 }
 
 .section-title {
@@ -465,38 +550,177 @@ body {
     border-radius: 2px;
 }
 
-.companies-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-    align-items: center;
-    max-width: 800px;
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.portfolio-grid {
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-.company {
-    text-align: center;
-    padding: 2rem;
-    background: white;
-    border-radius: 15px;
+.portfolio-card {
+    background: #f8fafc;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     position: relative;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    border: 1px solid #f1f5f9;
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+    border: 1px solid #e2e8f0;
 }
 
-.company:hover {
+.portfolio-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    border-color: #6366f1;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.company-logo {
-    max-width: 100%;
-    height: auto;
-    max-height: 80px;
-    object-fit: contain;
+.portfolio-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
 
+.portfolio-text {
+    flex: 1;
+}
+
+.portfolio-text h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1a1a2e;
+}
+
+.portfolio-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #64748b;
+}
+
+.portfolio-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-portfolio-primary {
+    background: #6366f1;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid #6366f1;
+    display: inline-block;
+}
+
+.btn-portfolio-primary:hover {
+    background: #5b5cf0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+.btn-portfolio-secondary {
+    background: transparent;
+    color: #6366f1;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid #6366f1;
+    display: inline-block;
+}
+
+.btn-portfolio-secondary:hover {
+    background: #6366f1;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+.portfolio-image {
+    flex-shrink: 0;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 15px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+
+.portfolio-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: #f1f5f9;
+    color: #6366f1;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid #e2e8f0;
+}
+
+.whatsapp-link {
+    width: 50px;
+    height: 50px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-link:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-link i {
+    font-size: 1.5rem;
 }
 
 
@@ -510,9 +734,9 @@ body {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -922,6 +1146,13 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2.5rem;
@@ -972,8 +1203,60 @@ body {
         display: none;
     }
     
-    .language-dropdown-mobile {
+    .mobile-menu {
         display: block;
+    }
+    
+    /* Asegurar que el menú móvil sea visible */
+    .mobile-menu.active .mobile-menu-dropdown {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        display: block !important;
+    }
+    
+    /* Asegurar que el menú móvil tenga el z-index correcto */
+    .mobile-menu {
+        z-index: 1003;
+    }
+    
+    .mobile-menu-dropdown {
+        z-index: 1004;
+    }
+    
+    /* Portfolio responsive */
+    .portfolio-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .portfolio-text h3 {
+        font-size: 1.5rem;
+    }
+    
+    .portfolio-description {
+        font-size: 1rem;
+    }
+    
+    .portfolio-buttons {
+        justify-content: center;
+    }
+    
+    .portfolio-image {
+        width: 150px;
+        height: 120px;
+        align-self: center;
+    }
+    
+    .portfolio-footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .portfolio-tags {
+        justify-content: center;
     }
 }
 

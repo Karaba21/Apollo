@@ -1,3 +1,8 @@
+// Función para obtener el idioma actual
+function getCurrentLanguage() {
+    return localStorage.getItem('language') || 'es'; // Por defecto español
+}
+
 // Smooth scrolling para enlaces de navegación
 document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling
@@ -9,9 +14,16 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                // Obtener la posición del header para calcular el offset
+                const header = document.querySelector('.header');
+                const headerHeight = header ? header.offsetHeight : 0;
+                
+                // Calcular la posición con offset
+                const targetPosition = targetSection.offsetTop - headerHeight - 20; // 20px adicionales de margen
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
                 });
             }
         });
@@ -123,23 +135,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Typing effect para el título principal
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        const text = heroTitle.textContent;
-        heroTitle.textContent = '';
-        
-        let i = 0;
-        const typeWriter = () => {
-            if (i < text.length) {
-                heroTitle.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        };
-        
-        // Delay para el efecto de typing
-        setTimeout(typeWriter, 500);
+    // Typing effect simple - solo al cargar la página en español
+    const currentLang = getCurrentLanguage();
+    if (currentLang === 'es') {
+        const heroTitle = document.querySelector('.hero-title');
+        if (heroTitle) {
+            const text = heroTitle.textContent;
+            heroTitle.textContent = '';
+            
+            let i = 0;
+            const typeWriter = () => {
+                if (i < text.length) {
+                    heroTitle.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            };
+            
+            setTimeout(typeWriter, 500);
+        }
     }
 
     // Líneas de fondo animadas
@@ -244,9 +258,16 @@ function openContactModal() {
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
-        section.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+        // Obtener la posición del header para calcular el offset
+        const header = document.querySelector('.header');
+        const headerHeight = header ? header.offsetHeight : 0;
+        
+        // Calcular la posición con offset
+        const targetPosition = section.offsetTop - headerHeight - 20; // 20px adicionales de margen
+        
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
         });
     }
 }
@@ -261,9 +282,16 @@ document.addEventListener("DOMContentLoaded", () => {
   
         const formSection = document.querySelector("#form");
         if (formSection) {
-          formSection.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
+          // Obtener la posición del header para calcular el offset
+          const header = document.querySelector('.header');
+          const headerHeight = header ? header.offsetHeight : 0;
+          
+          // Calcular la posición con offset
+          const targetPosition = formSection.offsetTop - headerHeight - 20; // 20px adicionales de margen
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
           });
         }
       });
@@ -293,12 +321,15 @@ document.addEventListener('DOMContentLoaded', function() {
         es: {
             'nav.services': 'Servicios',
             'nav.pricing': 'Planes',
+            'nav.clients': 'Clientes',
             'nav.contact': 'Contacto',
             'nav.team': 'Equipo',
+            'nav.language': 'Idioma',
             'hero.title': 'Soluciones para tu empresa',
             'hero.subtitle': 'Desarrollo de páginas web y sistemas CRM simples y efectivos',
             'hero.contact': 'Contactanos',
-            'companies.title': 'Empresas que confían en nosotros',
+            'portfolio.title': 'Nuestro Cliente',
+            'portfolio.subtitle': 'Conocé algunos de nuestros trabajos recientes',
             'services.title': 'Servicios que brindamos',
             'services.web.title': 'Creación de páginas web',
             'services.web.subtitle': 'Catapulta tu negocio con una página web',
@@ -350,17 +381,51 @@ document.addEventListener('DOMContentLoaded', function() {
             'disclaimers.additional.title': 'Costos adicionales',
             'disclaimers.additional.description': 'El servicio de hosting y el dominio no están incluidos en el precio del plan. Estos costos se pagan directamente al proveedor que elijas. Nosotros nos encargamos de dejar todo configurado y funcionando.',
             'disclaimers.business.title': 'Business Plan',
-            'disclaimers.business.description': 'El Business Plan puede incluir todo lo mencionado arriba, en caso de no desear algun servicio el costo sigue siendo el mismo.'
+            'disclaimers.business.description': 'El Business Plan puede incluir todo lo mencionado arriba, en caso de no desear algun servicio el costo sigue siendo el mismo.',
+            'portfolio.gp.title': 'GP Automóviles',
+            'portfolio.gp.description': 'Se desarrolló una página web con integración a una base de datos Supabase, donde se almacenan y gestionan los vehículos. Además, se creó un panel de administración con autenticación segura mediante Supabase Auth, que permite al cliente subir, editar y eliminar autos de forma sencilla.',
+            'portfolio.gp.button': 'Ver Página Web',
+            'modal.web.title': 'Creación de Páginas Web',
+            'modal.web.subtitle': 'Transformamos tu idea en una presencia digital profesional',
+            'modal.web.description': 'En Sav Solutions, creamos páginas web que no solo se ven increíbles, sino que también funcionan perfectamente para tu negocio. Nuestro enfoque se centra en:',
+            'modal.web.feature1.title': 'Diseño Responsive',
+            'modal.web.feature1.description': 'Tu página se verá perfecta en cualquier dispositivo: móvil, tablet o desktop.',
+            'modal.web.feature2.title': 'Optimización SEO',
+            'modal.web.feature2.description': 'Configuramos tu sitio para que Google y otros buscadores te encuentren fácilmente.',
+            'modal.web.feature3.title': 'Seguridad y Velocidad',
+            'modal.web.feature3.description': 'Implementamos las mejores prácticas de seguridad y optimización para cargas rápidas.',
+            'modal.web.feature4.title': 'Conversión Optimizada',
+            'modal.web.feature4.description': 'Diseñamos cada elemento para maximizar las conversiones y generar más clientes.',
+            'modal.ecommerce.title': 'E-commerce Adaptado a tus Necesidades',
+            'modal.ecommerce.subtitle': 'Vende online con Shopify, la plataforma más confiable',
+            'modal.ecommerce.description': 'Transformamos tu negocio físico en una tienda online exitosa. Con Shopify, tendrás todo lo necesario para vender en internet:',
+            'modal.ecommerce.feature1.title': 'Tienda Online Completa',
+            'modal.ecommerce.feature1.description': 'Diseñamos tu tienda con tu marca, productos organizados y proceso de compra optimizado.',
+            'modal.ecommerce.feature2.title': 'Pagos Seguros',
+            'modal.ecommerce.feature2.description': 'Integramos múltiples métodos de pago para que tus clientes puedan comprar con confianza.',
+            'modal.ecommerce.feature3.title': 'Gestión de Inventario',
+            'modal.ecommerce.feature3.description': 'Controla tu stock, gestiona pedidos y automatiza el proceso de envío.',
+            'modal.ecommerce.feature4.title': 'Optimizado para Móviles',
+            'modal.ecommerce.feature4.description': 'Tu tienda se ve perfecta en cualquier dispositivo, maximizando las ventas móviles.',
+            'footer.title': 'SAV SOLUTIONS',
+            'footer.subtitle': 'Transformando ideas en soluciones digitales',
+            'footer.about': 'About',
+            'footer.services': 'Servicios',
+            'footer.contact': 'Contacto',
+            'footer.copyright': '© Sav Solutions™ – Soluciones web y CRM para startups. Marca en uso desde 2025.'
         },
         en: {
             'nav.services': 'Services',
             'nav.pricing': 'Pricing',
+            'nav.clients': 'Clients',
             'nav.contact': 'Contact',
             'nav.team': 'Team',
+            'nav.language': 'Language',
             'hero.title': 'Solutions for your business',
             'hero.subtitle': 'Web page development and simple and effective CRM systems',
             'hero.contact': 'Contact us',
-            'companies.title': 'Companies that trust us',
+            'portfolio.title': 'Clients',
+            'portfolio.subtitle': 'Check out some of our recent work',
             'services.title': 'Services we provide',
             'services.web.title': 'Web page creation',
             'services.web.subtitle': 'Boost your business with a website',
@@ -412,14 +477,41 @@ document.addEventListener('DOMContentLoaded', function() {
             'disclaimers.additional.title': 'Additional costs',
             'disclaimers.additional.description': 'The hosting service and domain are not included in the plan price. These costs are paid directly to the provider you choose. We take care of leaving everything configured and working.',
             'disclaimers.business.title': 'Business Plan',
-            'disclaimers.business.description': 'The Business Plan can include everything mentioned above; if you do not want a service, the cost remains the same.'
+            'disclaimers.business.description': 'The Business Plan can include everything mentioned above; if you do not want a service, the cost remains the same.',
+            'portfolio.gp.title': 'GP Automóviles',
+            'portfolio.gp.description': 'A website was developed with Supabase database integration, where vehicles are stored and managed. In addition, an administration panel with secure authentication through Supabase Auth was created, allowing the client to upload, edit and delete cars easily.',
+            'portfolio.gp.button': 'View Website',
+            'modal.web.title': 'Web Page Creation',
+            'modal.web.subtitle': 'We transform your idea into a professional digital presence',
+            'modal.web.description': 'At Sav Solutions, we create websites that not only look amazing, but also work perfectly for your business. Our approach focuses on:',
+            'modal.web.feature1.title': 'Responsive Design',
+            'modal.web.feature1.description': 'Your page will look perfect on any device: mobile, tablet or desktop.',
+            'modal.web.feature2.title': 'SEO Optimization',
+            'modal.web.feature2.description': 'We configure your site so that Google and other search engines can find you easily.',
+            'modal.web.feature3.title': 'Security and Speed',
+            'modal.web.feature3.description': 'We implement the best security and optimization practices for fast loading.',
+            'modal.web.feature4.title': 'Optimized Conversion',
+            'modal.web.feature4.description': 'We design every element to maximize conversions and generate more customers.',
+            'modal.ecommerce.title': 'E-commerce Adapted to Your Needs',
+            'modal.ecommerce.subtitle': 'Sell online with Shopify, the most reliable platform',
+            'modal.ecommerce.description': 'We transform your physical business into a successful online store. With Shopify, you will have everything you need to sell on the internet:',
+            'modal.ecommerce.feature1.title': 'Complete Online Store',
+            'modal.ecommerce.feature1.description': 'We design your store with your brand, organized products and optimized checkout process.',
+            'modal.ecommerce.feature2.title': 'Secure Payments',
+            'modal.ecommerce.feature2.description': 'We integrate multiple payment methods so your customers can buy with confidence.',
+            'modal.ecommerce.feature3.title': 'Inventory Management',
+            'modal.ecommerce.feature3.description': 'Control your stock, manage orders and automate the shipping process.',
+            'modal.ecommerce.feature4.title': 'Mobile Optimized',
+            'modal.ecommerce.feature4.description': 'Your store looks perfect on any device, maximizing mobile sales.',
+            'footer.title': 'SAV SOLUTIONS',
+            'footer.subtitle': 'Transforming ideas into digital solutions',
+            'footer.about': 'About',
+            'footer.services': 'Services',
+            'footer.contact': 'Contact',
+            'footer.copyright': '© Sav Solutions™ – Web and CRM solutions for startups. Brand in use since 2025.'
         }
     };
     
-    // Función para obtener el idioma actual
-    function getCurrentLanguage() {
-        return localStorage.getItem('language') || 'es'; // Por defecto español
-    }
     
     // Función para guardar el idioma
     function setLanguage(lang) {
@@ -498,10 +590,8 @@ document.addEventListener('DOMContentLoaded', function() {
         setLanguage(lang);
         updateLanguageDisplay();
         
-        // Traducir con una pequeña animación suave
-        requestAnimationFrame(() => {
-            translatePage(lang);
-        });
+        // Traducir directamente sin efectos
+        translatePage(lang);
         
         console.log(`Idioma cambiado a: ${lang}`);
     }
@@ -518,6 +608,33 @@ document.addEventListener('DOMContentLoaded', function() {
         const languageDropdownMobile = document.querySelector('.language-dropdown-mobile');
         if (languageDropdownMobile) {
             languageDropdownMobile.classList.remove('active');
+        }
+    }
+    
+    // Función para cerrar menú móvil
+    function closeMobileMenu() {
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
+        const dropdown = document.getElementById('mobile-menu-dropdown');
+        
+        console.log('Cerrando menú móvil...'); // Debug
+        
+        if (mobileMenu) {
+            mobileMenu.classList.remove('active');
+        }
+        if (mobileMenuBtn) {
+            mobileMenuBtn.classList.remove('active');
+        }
+        
+        // Control directo del dropdown para cerrarlo
+        if (dropdown) {
+            dropdown.style.opacity = '0';
+            dropdown.style.visibility = 'hidden';
+            dropdown.style.transform = 'translateY(-20px)';
+            setTimeout(() => {
+                dropdown.style.display = 'none';
+            }, 300);
+            console.log('Menú cerrado por función closeMobileMenu');
         }
     }
     
@@ -542,6 +659,61 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Event listener para el menú móvil hamburguesa
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const mobileMenuBtn = this;
+            const dropdown = document.getElementById('mobile-menu-dropdown');
+            
+            console.log('Botón clickeado, menú actual:', mobileMenu.classList.contains('active'));
+            
+            // Toggle de clases
+            mobileMenu.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+            
+            // Control directo del dropdown
+            if (dropdown) {
+                if (mobileMenu.classList.contains('active')) {
+                    dropdown.style.display = 'block';
+                    setTimeout(() => {
+                        dropdown.style.opacity = '1';
+                        dropdown.style.visibility = 'visible';
+                        dropdown.style.transform = 'translateY(0)';
+                    }, 10);
+                    console.log('Menú abierto');
+                } else {
+                    dropdown.style.opacity = '0';
+                    dropdown.style.visibility = 'hidden';
+                    dropdown.style.transform = 'translateY(-20px)';
+                    setTimeout(() => {
+                        dropdown.style.display = 'none';
+                    }, 300);
+                    console.log('Menú cerrado');
+                }
+            }
+            
+            console.log('Menú móvil toggled'); // Debug
+            
+            // Prevenir que otros event listeners interfieran
+            return false;
+        });
+    }
+    
+    // Event listeners específicos para enlaces de navegación móvil
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            console.log('Enlace móvil clickeado:', this.textContent); // Debug
+            closeMobileMenu();
+        });
+    });
+    
     // Event listeners para las opciones de idioma (usando delegación de eventos)
     document.addEventListener('click', function(e) {
         // Verificar si se hizo clic en una opción de idioma
@@ -553,9 +725,28 @@ document.addEventListener('DOMContentLoaded', function() {
             closeDropdowns();
         }
         
-        // Cerrar dropdowns al hacer click fuera
-        if (!e.target.closest('.language-dropdown') && !e.target.closest('.language-dropdown-mobile')) {
+        // Verificar si se hizo clic en una opción de idioma móvil
+        if (e.target.closest('.mobile-language-option')) {
+            const option = e.target.closest('.mobile-language-option');
+            const lang = option.getAttribute('data-lang');
+            console.log('Opción de idioma móvil clickeada:', lang); // Debug
+            changeLanguage(lang);
+            closeMobileMenu();
+        }
+        
+        // Verificar si se hizo clic en un enlace de navegación móvil
+        if (e.target.closest('.mobile-nav-link')) {
+            console.log('Enlace de navegación móvil clickeado'); // Debug
+            closeMobileMenu();
+        }
+        
+        // Cerrar dropdowns al hacer click fuera (pero no en el botón del menú móvil)
+        if (!e.target.closest('.language-dropdown') && 
+            !e.target.closest('.language-dropdown-mobile') && 
+            !e.target.closest('.mobile-menu') &&
+            !e.target.closest('#mobile-menu-toggle')) {
             closeDropdowns();
+            closeMobileMenu();
         }
     });
     
@@ -563,6 +754,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             closeDropdowns();
+            closeMobileMenu();
         }
     });
     
