@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'hero.title': 'Soluciones para tu empresa',
             'hero.subtitle': 'Desarrollo de páginas web funcionales y adaptadas a tu marca',
             'hero.contact': 'Contactanos',
-            'portfolio.title': 'Nuestro Cliente',
+            'portfolio.title': 'Clientes',
             'portfolio.subtitle': 'Conocé algunos de nuestros trabajos recientes',
             'services.title': 'Servicios que brindamos',
             'services.web.title': 'Creación de páginas web',
